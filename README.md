@@ -1,2 +1,5 @@
-# 8K-Mapping-Project
-Extracting text from Form 8Ks, tagging event type based on corpus of financial terms, then building out interactive charting tool to visualize corporate events over time.
+# 8K Mapping Project
+
+This repo contains python code for an ongoing project to build a corporate event mapping application for public companies in the US.
+
+It also contains code to help extract text from MD&A sections in 10Ks and 10Qs
