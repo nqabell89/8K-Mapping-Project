@@ -2,14 +2,12 @@ import numpy as np
 import pandas as pd
 from sec_edgar_downloader import Downloader
 
-df = pd.read_csv('data/sp500_list.csv')
+df = pd.read_csv('sp500_test.csv')
 drop_column = df.columns[0]
 df.drop(columns = drop_column, inplace = True)
-df.CIK = df.CIK.astype(str)
-df['CIK'] = df['CIK'].str.zfill(10)
-dl = Downloader('data/')
+dl = Downloader('test_data/')
 for i in df.index:
     print(f"{df.index[i]}: Pulling 8Ks for {df.COMPANY[i]}")
-    dl.get("8-K", df.CIK[i], after_date="20070101", include_amends=False)
+    dl.get("8-K", df.TICKER[i], after_date="20180101", include_amends=False)
     print(f"{df.index[i]}: {df.COMPANY[i]} done.")
     

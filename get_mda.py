@@ -118,9 +118,8 @@ def find_mda_from_10k(text, start=0):
     end = 0
 
     # Define start & end signal for parsing
-    item7_begins = [
-        '\nITEM 7.', '\nITEM 7 –', '\nITEM 7:', '\nITEM 7 ', '\nITEM 7\n'
-    ]
+    item7_begins = ['\nITEM 7.', '\nITEM 7 –', '\nITEM 7:', '\nITEM 7 ', '\nITEM 7\n',
+                    '\nITEM7']
     item7_ends = ['\nITEM 7A']
     if start != 0:
         item7_ends.append('\nITEM 7')  # Case: ITEM 7A does not exist
@@ -165,9 +164,7 @@ def find_mda_from_10q(text, start=0):
     end = 0
 
     # Define start & end signal for parsing
-    item2_begins = [
-        '\nITEM 2.', '\nITEM 2 –', '\nITEM 2:', '\nITEM 2 ', '\nITEM 2\n'
-    ]
+    item2_begins = ['\nITEM 2.', '\nITEM 2 –', '\nITEM 2:', '\nITEM 2 ', '\nITEM 2\n']
     item2_ends = ['\nITEM 2A']
     if start != 0:
         item2_ends.append('\nITEM 2')  # Case: ITEM 2A does not exist
